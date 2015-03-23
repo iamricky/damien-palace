@@ -3,11 +3,11 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "_partials/imports";
-@import "_partials/fonts";
-@import "_partials/variables";
-@import "_partials/placeholders";
-@import "_partials/mixins";
+@import "partials/imports";
+@import "partials/fonts";
+@import "partials/variables";
+@import "partials/placeholders";
+@import "partials/mixins";
 
 body {
   @extend %font-smoothing;
