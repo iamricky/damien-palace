@@ -27,6 +27,10 @@
             </div>
             <div class="news">
                 <h1>news</h1>
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
             </div>
             <div class="music">
                 <h1>music</h1>
@@ -34,7 +38,7 @@
             <div class="videos">
                 <h1>videos</h1>
             </div>
-            <div class="featured-video">
+            <div class="featured">
                 <h1>featured video</h1>
             </div>
             <div class="photos">
