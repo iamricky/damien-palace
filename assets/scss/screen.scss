@@ -6,6 +6,8 @@
 @import "_partials/imports";
 @import "_partials/fonts";
 @import "_partials/variables";
+@import "_partials/placeholders";
+@import "_partials/mixins";
 
 body {
   @extend %font-smoothing;
