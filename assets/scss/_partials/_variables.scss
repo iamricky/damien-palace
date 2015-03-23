@@ -1,0 +1,50 @@
+$indigo: #32323c;
+$orange: #d6993c;
+
+%headline {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+%section {
+  @extend .row;
+  text-align: center;
+
+  & > h1 {
+    @extend %section-headline;
+  }
+}
+
+%section-headline {
+  @extend %headline;
+  border-bottom: 6px solid $orange;
+  display: inline-block;
+
+  font: {
+    family: "Trade Gothic Condensed";
+    size: 60px;
+  };
+  margin: 120px auto;
+  padding: 0 0 24px;
+}
+
+%font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-smooth: always;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin background-image($image, $fixed: false, $inverse: false) {
+  color: white;
+
+  background: {
+    @if $fixed == true {
+      attachment: fixed;
+    }
+    image: image-url($image);
+    repeat: no-repeat;
+    size: cover;
+  };
+}
