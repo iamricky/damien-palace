@@ -16,12 +16,24 @@ $orange: #d6993c;
   text-transform: uppercase;
 }
 
-%headline-body {
+%section {
+  @extend .row;
+  text-align: center;
+
+  & > h1 {
+    @extend %section-headline;
+  }
+}
+
+%section-headline {
   @extend %headline;
   border-bottom: 6px solid $orange;
   display: inline-block;
-  font-family: "Trade Gothic Condensed";
-  font-size: 60px;
+
+  font: {
+    family: "Trade Gothic Condensed";
+    size: 60px;
+  };
   margin: 120px auto;
   padding: 0 0 24px;
 }
@@ -73,9 +85,12 @@ body {
 
   .masthead {
     @extend %headline;
+
+    font: {
+      family: "Trade Gothic Bold";
+      size: 108px;
+    };
     color: white;
-    font-family: "Trade Gothic Bold";
-    font-size: 108px;
     text-align: center;
     letter-spacing: 0.18em;
     position: absolute;
@@ -85,11 +100,6 @@ body {
   }
 }
 
-.news {
-  @extend .row;
-  text-align: center;
-
-  & > h1 {
-    @extend %headline-body;
-  }
+.news, .music, .videos, .featured-video, .photos, .events, .munz-mind {
+  @extend %section;
 }

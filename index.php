@@ -28,6 +28,24 @@
             <div class="news">
                 <h1>news</h1>
             </div>
+            <div class="music">
+                <h1>music</h1>
+            </div>
+            <div class="videos">
+                <h1>videos</h1>
+            </div>
+            <div class="featured-video">
+                <h1>featured video</h1>
+            </div>
+            <div class="photos">
+                <h1>photos</h1>
+            </div>
+            <div class="events">
+                <h1>events</h1>
+            </div>
+            <div class="munz-mind">
+                <h1>munz mind</h1>
+            </div>
         </div>
 
         <!-- Javcascript -->
