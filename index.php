@@ -25,6 +25,9 @@
                     <div class="masthead">Damien Palace</div>
                 </div>
             </div>
+            <div class="news">
+                <h1>news</h1>
+            </div>
         </div>
 
         <!-- Javcascript -->
