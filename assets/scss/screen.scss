@@ -3,17 +3,60 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
+@import "_partials/imports";
+@import "_partials/fonts"; // Import fonts
 
-// Import Bootstrap Compass integration
-@import "bootstrap-compass";
-
-// Import custom Bootstrap variables
-@import "bootstrap-variables";
-
-// Import Bootstrap for Sass
-@import "bootstrap";
+$indigo: #32323c;
+$orange: #d6993c;
 
 body {
-    background: red;
+    background: #fbfbfb;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-smooth: always;
+    text-rendering: optimizeLegibility;
+    & > .container-fluid {
+        padding: 0 !important;
+        & > .row {
+            margin: 0 !important;
+        }
+    }
+}
+
+.cover {
+    @extend .row;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($indigo, 1);
+    position: relative;
+
+    .cover-image {
+        background: {
+            attachment: fixed;
+            image: image-url("cover-img.png");
+            repeat: no-repeat;
+            size: cover;
+        };
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+        line-height: 0;
+        overflow: hidden;
+        height: 100%;
+        transform: scale(1);
+        z-index: 2;
+    }
+    .masthead {
+        color: white;
+        font-family: "Trade Gothic Bold";
+        font-size: 120px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.18em;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        z-index: 2;
+    }
 }
