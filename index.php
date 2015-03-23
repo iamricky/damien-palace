@@ -50,6 +50,15 @@
             <div class="munz-mind">
                 <h1>munz mind</h1>
             </div>
+            <footer>
+                <h1>Follow Damien</h1>
+                <ul>
+                    <li>facebook</li>
+                    <li>instagram</li>
+                    <li>twitter</li>
+                    <li>youtube</li>
+                </ul>
+            </footer>
         </div>
 
         <!-- Javcascript -->

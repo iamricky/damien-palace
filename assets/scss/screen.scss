@@ -28,7 +28,7 @@ body {
   position: relative;
 
   .cover-image {
-    @include background-image("cover-img.png");
+    @include background-image("cover-img.png", $fixed: true);
     text-align: center;
     width: 100%;
     bottom: 0;
@@ -84,4 +84,28 @@ body {
 
 .munz-mind {
   @extend %section;
+}
+
+footer {
+  @extend %section;
+  @include background-image("footer-img.png", $fixed: true);
+  background-position: 0px 160px;
+  bottom: 0;
+
+  ul {
+    font: {
+      family: "Trade Gothic Condensed";
+      size: 36px;
+    };
+    margin: 0 !important;
+    letter-spacing: 0.18em;
+    line-height: 102px;
+    text-align: center;
+    text-transform: uppercase;
+
+    li {
+      display: inline-block;
+      margin: 0 24px;
+    }
+  }
 }
