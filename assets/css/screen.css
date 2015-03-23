@@ -372,8 +372,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?1427041179);
-  src: url(/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?&1427041179#iefix) format("embedded-opentype"), url(/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2?1427041179) format("woff2"), url(/assets/fonts/bootstrap/glyphicons-halflings-regular.woff?1427041179) format("woff"), url(/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf?1427041179) format("truetype"), url(/assets/fonts/bootstrap/glyphicons-halflings-regular.svg?1427041179#glyphicons_halflingsregular) format("svg");
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1427041179);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1427041179#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1427041179) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1427041179) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1427041179) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1427041179#glyphicons_halflingsregular) format("svg");
 }
 .glyphicon {
   position: relative;
@@ -2025,15 +2025,15 @@ pre code {
   clear: both;
 }
 
-.row {
+.row, .cover {
   margin-left: -15px;
   margin-right: -15px;
 }
-.row:before, .row:after {
+.row:before, .cover:before, .row:after, .cover:after {
   content: " ";
   display: table;
 }
-.row:after {
+.row:after, .cover:after {
   clear: both;
 }
 
@@ -5585,7 +5585,7 @@ a.thumbnail.active {
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
   background-size: 40px 40px;
 }
 
@@ -5602,7 +5602,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .progress-bar-info {
@@ -5611,7 +5611,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .progress-bar-warning {
@@ -5620,7 +5620,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .progress-bar-danger {
@@ -5629,7 +5629,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .media {
@@ -7198,6 +7198,80 @@ button.close {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Trade Gothic Bold";
+  src: url('../fonts/TradeGothic/Bold.eot?1427081082');
+  src: url('../fonts/TradeGothic/Bold.eot?&1427081082#iefix') format('embedded-opentype'), url('../fonts/TradeGothic/Bold.woff?1427081082') format('woff'), url('../fonts/TradeGothic/Bold.ttf?1383667544') format('truetype'), url('../fonts/TradeGothic/Bold.svg?1427081082') format('svg');
+}
+@font-face {
+  font-family: "Trade Gothic Regular";
+  src: url('../fonts/TradeGothic/Regular.eot?1427080978');
+  src: url('../fonts/TradeGothic/Regular.eot?&1427080978#iefix') format('embedded-opentype'), url('../fonts/TradeGothic/Regular.woff?1427080978') format('woff'), url('../fonts/TradeGothic/Regular.ttf?1383666963') format('truetype'), url('../fonts/TradeGothic/Regular.svg?1427080978') format('svg');
+}
+@font-face {
+  font-family: "Trade Gothic Condensed Bold";
+  src: url('../fonts/TradeGothicCondensed/Bold.eot?1427087236');
+  src: url('../fonts/TradeGothicCondensed/Bold.eot?&1427087236#iefix') format('embedded-opentype'), url('../fonts/TradeGothicCondensed/Bold.woff?1427087236') format('woff'), url('../fonts/TradeGothicCondensed/Bold.ttf?1383323356') format('truetype'), url('../fonts/TradeGothic/Bold.svg?1427081082') format('svg');
+}
+@font-face {
+  font-family: "Trade Gothic Condensed";
+  src: url('../fonts/TradeGothicCondensed/Condensed.eot?1427087250');
+  src: url('../fonts/TradeGothicCondensed/Condensed.eot?&1427087250#iefix') format('embedded-opentype'), url('../fonts/TradeGothicCondensed/Condensed.woff?1427087250') format('woff'), url('../fonts/TradeGothicCondensed/Condensed.ttf?1383334314') format('truetype'), url('../fonts/TradeGothicCondensed/Condensed.svg?1427087250') format('svg');
+}
+@font-face {
+  font-family: "Proxima Nova Extrabold";
+  src: url('../fonts/ProximaNova/Extrabold.eot?1427080832');
+  src: url('../fonts/ProximaNova/Extrabold.eot?&1427080832#iefix') format('embedded-opentype'), url('../fonts/ProximaNova/Extrabold.woff?1427080832') format('woff'), url('../fonts/ProximaNova/Extrabold.ttf?1427080832') format('truetype'), url('../fonts/ProximaNova/Extrabold.svg?1427080830') format('svg');
+}
+@font-face {
+  font-family: "Proxima Nova Regular";
+  src: url('../fonts/ProximaNova/Regular.eot?1427080848');
+  src: url('../fonts/ProximaNova/Regular.eot?&1427080848#iefix') format('embedded-opentype'), url('../fonts/ProximaNova/Regular.woff?1427080848') format('woff'), url('../fonts/ProximaNova/Regular.ttf?1427080848') format('truetype'), url('../fonts/ProximaNova/Regular.svg?1427080848') format('svg');
+}
 body {
-  background: red;
+  background: #fbfbfb;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-smooth: always;
+  text-rendering: optimizeLegibility;
+}
+body > .container-fluid {
+  padding: 0 !important;
+}
+body > .container-fluid > .row, body > .container-fluid > .cover {
+  margin: 0 !important;
+}
+
+.cover {
+  width: 100vw;
+  height: 100vh;
+  background: #32323c;
+  position: relative;
+}
+.cover .cover-image {
+  background-attachment: fixed;
+  background-image: url('../img/cover-img.png?1427050022');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  line-height: 0;
+  overflow: hidden;
+  height: 100%;
+  transform: scale(1);
+  z-index: 2;
+}
+.cover .masthead {
+  color: white;
+  font-family: "Trade Gothic Bold";
+  font-size: 120px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.18em;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 2;
 }
