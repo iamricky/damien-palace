@@ -5,7 +5,10 @@
     </div>
 </div>
 
-<?php $partials = array( "partials/news", "partials/music", "partials/videos", "partials/featured", "partials/photos", "partials/events", "partials/munz-mind" );
+<?php
+
+$dir = "partials";
+$partials = array( "${dir}/news", "${dir}/music", "${dir}/videos", "${dir}/featured", "${dir}/photos", "${dir}/events", "${dir}/munz-mind" );
 
 foreach ( $partials as $partial ) {
     get_template_part( $partial );
