@@ -1,7 +1,7 @@
 <div class="news">
-    <h1>news</h1>
     <div class="container">
         <div class="row">
+            <h1>news</h1>
         </div>
     </div>
 </div>

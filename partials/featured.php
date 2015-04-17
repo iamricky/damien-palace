@@ -1,3 +1,7 @@
 <div class="featured">
-    <h1>featured video</h1>
+    <div class="container">
+        <div class="row">
+            <h1>featured video</h1>
+        </div>
+    </div>
 </div>

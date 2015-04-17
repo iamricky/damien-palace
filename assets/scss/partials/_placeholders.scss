@@ -7,7 +7,7 @@
   text-align: center;
   padding: 96px 0;
 
-  & > h1 {
+  h1 {
     @extend %section-headline;
   }
 }

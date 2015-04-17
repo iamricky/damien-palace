@@ -12,14 +12,6 @@
 body {
   @extend %font-smoothing;
   background: #fbfbfb;
-
-  & > .container-fluid {
-    padding: 0 !important;
-
-    & > .row {
-      margin: 0 !important;
-    }
-  }
 }
 
 .cover {
@@ -91,7 +83,7 @@ body {
 footer {
   @extend %section;
   @include background-image("footer-img.png", $fixed: true);
-  background-position: 0px 160px;
+  // background-position: 0px 160px;
   bottom: 0;
 
   ul {
