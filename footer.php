@@ -7,7 +7,6 @@
                     <li>youtube</li>
                 </ul>
             </footer>
-        </div> <!-- end .container-fluid -->
 
         <!-- Javcascript -->
         <?php wp_footer(); ?>
