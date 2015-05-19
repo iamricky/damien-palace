@@ -7,10 +7,10 @@
 
 <?php
 
-$dir = "partials";
-$partials = array( "${dir}/news", "${dir}/music", "${dir}/videos", "${dir}/featured", "${dir}/photos", "${dir}/events", "${dir}/munz-mind" );
+$dir = "partials/";
+$partials = array( "news", "music", "videos", "featured", "photos", "events", "munz-mind" );
 
 foreach ( $partials as $partial ) {
-    get_template_part( $partial );
+    get_template_part( $dir .  $partial );
 }
 get_footer(); ?>
