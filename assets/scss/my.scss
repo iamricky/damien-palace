@@ -15,7 +15,6 @@ body {
 }
 
 .cover {
-  @extend .row;
   width: 100vw;
   height: 100vh;
   background: rgba($indigo, 1);
@@ -69,6 +68,16 @@ body {
 
 .photos {
   @extend %section;
+
+  .photo {
+    @extend .col-md-3;
+    @extend .col-sm-6;
+    padding: 15px;
+
+    & > img {
+      @extend .img-responsive;
+    }
+  }
 }
 
 .events {
