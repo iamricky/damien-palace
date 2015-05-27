@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="cover">
     <div class="cover-image">
         <div class="masthead">Damien Palace</div>
@@ -12,5 +13,6 @@ $partials = array( "news", "music", "videos", "featured", "photos", "events", "m
 
 foreach ( $partials as $partial ) {
     get_template_part( $dir .  $partial );
-}
-get_footer(); ?>
+} ?>
+
+<?php get_footer(); ?>
