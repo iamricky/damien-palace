@@ -22,7 +22,7 @@ add_action( "wp_ajax_query_photos", "my_photo_query" );
 function my_photo_query() {
 
   $instagram = new InstagramApi();
-  $data = json_encode( $instagram->query_photos() );
+  $data = $instagram->query_photos();
 
   echo $data;
 
