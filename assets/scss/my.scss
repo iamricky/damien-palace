@@ -74,8 +74,18 @@ body {
     @extend .col-sm-6;
     padding: 15px;
 
-    & > img {
+    img {
       @extend .img-responsive;
+
+      &.img-sm {
+        @extend .visible-md-inline;
+        @extend .visible-lg-inline;
+      }
+
+      &.img-lg {
+        @extend .visible-xs-inline;
+        @extend .visible-sm-inline;
+      }
     }
   }
 }
