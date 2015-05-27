@@ -1,25 +1,27 @@
-jQuery(document).ready(
-    function($) {
-        $.ajax({
-            url: the_api.ajax_url,
-            type: "post",
-            dataType: "json",
-            data: {
-                action: "query_photos"
-            }
-        }).done(function(data) {
-            console.log("got photos!");
+jQuery(document).ready(function($) {
 
-            $.each(data, function(idx, img) {
+    var initPhotos = $.ajax({
+        url: the_api.ajax_url,
+        type: "post",
+        dataType: "json",
+        data: {
+            action: "query_photos"
+        }
+    });
 
-                var $elem = $(".photos").find(".row:last"),
-                    html = "<div class='photo'>";
+    initPhotos.done(function(data) {
+        console.log("got photos!");
 
-                html += "<img src=" + img.large_img + " />",
-                html += "</div>";
+        $.each(data, function(index, obj) {
 
-                $elem.append(html);
-            });
+            var $elem = $(".photos").find(".row:last"),
+                output = "<div class='photo'>";
+
+                output += "<img class='img-sm' src=" + obj.small_img + " />",
+                output += "<img class='img-lg' src=" + obj.large_img + " />",
+                output += "</div>";
+
+            $elem.append(output);
         });
-    }
-);
+    });
+});
