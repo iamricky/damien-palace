@@ -1,6 +1,7 @@
 <?php
 
 include_once "api/instagram.php";
+include_once "api/youtube.php";
 
 add_action( "wp_enqueue_scripts", "enqueue_assets" );
 function enqueue_assets() {
@@ -16,13 +17,23 @@ function enqueue_assets() {
     )
   );
 }
-
 add_action( "wp_ajax_nopriv_query_photos", "my_photo_query" );
 add_action( "wp_ajax_query_photos", "my_photo_query" );
 function my_photo_query() {
 
   $instagram = new InstagramApi();
   $data = $instagram->query_photos();
+
+  echo $data;
+
+  wp_die();
+}
+add_action( "wp_ajax_nopriv_query_videos", "my_video_query" );
+add_action( "wp_ajax_query_videos", "my_video_query" );
+function my_video_query() {
+
+  $youtube = new YouTubeApi();
+  $data = $youtube->query_videos();
 
   echo $data;
 
