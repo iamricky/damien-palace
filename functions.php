@@ -8,13 +8,18 @@ function enqueue_assets() {
   $temp_dir   = get_template_directory_uri();
   $css_dir    = "${temp_dir}/assets/css";
   $js_dir     = "${temp_dir}/assets/js";
-  $bower_dir  = "${temp_dir}/bower_components";
 
+  $bower      = "${temp_dir}/bower_components";
+  $fancybox   = "${bower}/fancybox/source";
+
+  // css
   wp_enqueue_style( "my-stylesheet", "${css_dir}/my.css" );
+  wp_enqueue_style( "fancybox-css", "${fancybox}/jquery.fancybox.css" );
 
   // javascript
   wp_enqueue_script( "my-js", "${js_dir}/my.js", array( "jquery" ), "1", true );
-  wp_enqueue_script( "fit-text", "${bower_dir}/FitText.js/jquery.fittext.js", array( "my-js" ), "1.2.0", true );
+  wp_enqueue_script( "fancybox-js", "${fancybox}/jquery.fancybox.pack.js", array( "jquery" ), "1", true );
+  wp_enqueue_script( "fit-text", "${bower}/FitText.js/jquery.fittext.js", array( "my-js" ), "1.2.0", true );
 
   wp_localize_script( "my-js", "the_api", array(
       "ajax_url" => admin_url( "admin-ajax.php" )
