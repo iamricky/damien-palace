@@ -10,7 +10,10 @@ function enqueue_assets() {
   $js_dir     = "/assets/js/";
 
   wp_enqueue_style( "my-stylesheet", $temp_dir . $css_dir . "my.css" );
+
+  // javascript
   wp_enqueue_script( "my-js", $temp_dir . $js_dir . "my.js", array( "jquery" ), "1", true );
+  wp_enqueue_script( "fit-text", $temp_dir . "/bower_components/FitText.js/jquery.fittext.js", array( "my-js" ), "1.2.0", true );
 
   wp_localize_script( "my-js", "the_api", array(
       "ajax_url" => admin_url( "admin-ajax.php" )
