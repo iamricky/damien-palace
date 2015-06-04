@@ -11,18 +11,23 @@ function enqueue_assets() {
 
   $bower      = "${temp_dir}/bower_components";
   $fancybox   = "${bower}/fancybox/source";
+  $fit_text   = "${bower}/FitText.js";
+  $mustache   = "${bower}/mustache";
 
   // css
   wp_enqueue_style( "my-stylesheet", "${css_dir}/my.css" );
   wp_enqueue_style( "fancybox-css", "${fancybox}/jquery.fancybox.css" );
 
   // javascript
-  wp_enqueue_script( "my-js", "${js_dir}/my.js", array( "jquery" ), "1", true );
-  wp_enqueue_script( "fancybox-js", "${fancybox}/jquery.fancybox.pack.js", array( "jquery" ), "1", true );
-  wp_enqueue_script( "fit-text", "${bower}/FitText.js/jquery.fittext.js", array( "my-js" ), "1.2.0", true );
+  wp_enqueue_script( "my-js", "${js_dir}/my.js", array( "jquery" ), false, true );
+  wp_enqueue_script( "fancybox-js", "${fancybox}/jquery.fancybox.pack.js", array( "jquery" ), false, true );
+  wp_enqueue_script( "fit-text", "${fit_text}/jquery.fittext.js", array( "my-js" ), false, true );
+  wp_enqueue_script( "mustache", "${mustache}/mustache.js", array( "my-js" ), false, true );
 
-  wp_localize_script( "my-js", "the_api", array(
-      "ajax_url" => admin_url( "admin-ajax.php" )
+  // ajax url
+  wp_localize_script( "my-js", "wp_urls", array(
+      "ajax_url"      => admin_url( "admin-ajax.php" ),
+      "template_url"  => $temp_dir
     )
   );
 }
