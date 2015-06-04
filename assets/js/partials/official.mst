@@ -1,0 +1,3 @@
+<div class="video">
+    <img class="img-lg" src="{{high_img}}" />
+</div>

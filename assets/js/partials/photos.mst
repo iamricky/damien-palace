@@ -1,0 +1,3 @@
+<div class="photo">
+    <img class="img-sm" src="{{ small_img }}" />
+</div>
