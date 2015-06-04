@@ -77,4 +77,18 @@ jQuery(function($) {
             setupView(obj.partial, obj.view, obj.data);
         });
     });
+
+    //fancybox
+    $(".fancybox").fancybox({
+        helpers: {
+            media: {
+                youtube: {
+                    params: {
+                        autoplay: 0
+                    }
+                }
+            }
+        },
+        padding: 0
+    });
 });

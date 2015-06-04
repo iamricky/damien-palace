@@ -21,6 +21,7 @@ function enqueue_assets() {
   // javascript
   wp_enqueue_script( "my-js", "${js_dir}/my.js", array( "jquery" ), false, true );
   wp_enqueue_script( "fancybox-js", "${fancybox}/jquery.fancybox.pack.js", array( "jquery" ), false, true );
+  wp_enqueue_script( "fancybox-media", "${fancybox}/helpers/jquery.fancybox-media.js", array( "fancybox-js" ), false, true );
   wp_enqueue_script( "fit-text", "${fit_text}/jquery.fittext.js", array( "my-js" ), false, true );
   wp_enqueue_script( "mustache", "${mustache}/mustache.js", array( "my-js" ), false, true );
 
