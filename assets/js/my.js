@@ -19,11 +19,12 @@ jQuery(function($) {
 
             return partial;
         },
-        setupView = function(partial, view, data) {
-            $.get(fetchPartial(partial), function(template) {
+        setupView = function(obj) {
 
-                var $view = view,
-                    videos = data;
+            $.get(fetchPartial(obj.partial), function(template) {
+
+                var $view = obj.view,
+                    videos = obj.data;
 
                 $.each(videos, function(idx, obj) {
 
@@ -36,8 +37,7 @@ jQuery(function($) {
                     }
                 });
             });
-
-        }
+        };
 
     var data = {},
         view = {
@@ -46,7 +46,7 @@ jQuery(function($) {
                 official: fetchView(".videos"),
                 munzmind: fetchView(".munz-mind")
             }
-        }
+        };
 
     var requests = [
         fetchMedia("photos"),
@@ -71,10 +71,10 @@ jQuery(function($) {
             partial: "munzmind.mst",
             view: view.video.munzmind,
             data: data.video.munzmind
-        }]
+        }];
 
-        $.each(setupParams, function(idx, obj) {
-            setupView(obj.partial, obj.view, obj.data);
+        $.each(setupParams, function(idx, params) {
+            setupView(params);
         });
     });
 
@@ -84,7 +84,9 @@ jQuery(function($) {
             media: {
                 youtube: {
                     params: {
-                        autoplay: 0
+                        autoplay: 1,
+                        controls: 0,
+                        showinfo: 0
                     }
                 }
             }
