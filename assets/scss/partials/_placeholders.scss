@@ -25,6 +25,24 @@
   padding: 0 0 24px;
 }
 
+%media-frame {
+  @extend %section;
+
+  .media {
+    @extend .row;
+  }
+
+  .frame {
+    @extend .col-md-3;
+    @extend .col-sm-6;
+    padding: 15px;
+
+    img {
+      @extend .img-responsive;
+    }
+  }
+}
+
 %font-smoothing {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;

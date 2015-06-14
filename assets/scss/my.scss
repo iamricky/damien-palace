@@ -48,6 +48,38 @@ body {
   }
 }
 
+.paginate-btn {
+  @extend .col-md-6;
+  @extend .col-md-offset-3;
+
+  div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  background: {
+    color: #000;
+    image: image-url("paginate-btn.jpg");
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  };
+  color: white;
+  cursor: pointer;
+  display: table;
+  overflow: hidden;
+
+  font: {
+    family: "Trade Gothic Bold";
+    size: 24px;
+  };
+  height: 72px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
 .news {
   @extend %section;
 }
@@ -58,7 +90,7 @@ body {
 }
 
 .videos {
-  @extend %section;
+  @extend %media-frame;
 }
 
 .featured {
@@ -67,27 +99,7 @@ body {
 }
 
 .photos {
-  @extend %section;
-
-  .photo {
-    @extend .col-md-3;
-    @extend .col-sm-6;
-    padding: 15px;
-
-    img {
-      @extend .img-responsive;
-
-      &.img-sm {
-        @extend .visible-md-inline;
-        @extend .visible-lg-inline;
-      }
-
-      &.img-lg {
-        @extend .visible-xs-inline;
-        @extend .visible-sm-inline;
-      }
-    }
-  }
+  @extend %media-frame;
 }
 
 .events {
@@ -96,7 +108,7 @@ body {
 }
 
 .munz-mind {
-  @extend %section;
+  @extend %media-frame;
 }
 
 footer {
