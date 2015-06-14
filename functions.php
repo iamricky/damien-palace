@@ -1,18 +1,23 @@
 <?php
 
+include_once "api/keys.php";
 include_once "api/instagram.php";
 include_once "api/youtube.php";
+
+$instagram = new InstagramApi( $keys["instagram"] );
+$youtube = new YouTubeApi( $keys["youtube"] );
 
 add_action( "wp_enqueue_scripts", "enqueue_assets" );
 function enqueue_assets() {
   $temp_dir   = get_template_directory_uri();
+  $bower_dir  = "${temp_dir}/bower_components";
+
   $css_dir    = "${temp_dir}/assets/css";
   $js_dir     = "${temp_dir}/assets/js";
 
-  $bower      = "${temp_dir}/bower_components";
-  $fancybox   = "${bower}/fancybox/source";
-  $fit_text   = "${bower}/FitText.js";
-  $mustache   = "${bower}/mustache";
+  $fancybox   = "${bower_dir}/fancybox/source";
+  $fit_text   = "${bower_dir}/FitText.js";
+  $mustache   = "${bower_dir}/mustache";
 
   // css
   wp_enqueue_style( "my-stylesheet", "${css_dir}/my.css" );
@@ -36,8 +41,19 @@ add_action( "wp_ajax_nopriv_query_photos", "my_photo_query" );
 add_action( "wp_ajax_query_photos", "my_photo_query" );
 function my_photo_query() {
 
-  $instagram = new InstagramApi();
+  global $instagram;
   $data = $instagram->query_photos();
+
+  echo $data;
+
+  wp_die();
+}
+add_action( "wp_ajax_nopriv_query_pagination", "my_pagination_query" );
+add_action( "wp_ajax_query_pagination", "my_pagination_query" );
+function my_pagination_query() {
+
+  global $instagram;
+  $data = $instagram->pagination_query();
 
   echo $data;
 
@@ -47,7 +63,7 @@ add_action( "wp_ajax_nopriv_query_videos", "my_video_query" );
 add_action( "wp_ajax_query_videos", "my_video_query" );
 function my_video_query() {
 
-  $youtube = new YouTubeApi();
+  global $youtube;
   $data = $youtube->query_videos();
 
   echo $data;
