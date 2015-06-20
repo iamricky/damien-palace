@@ -35,7 +35,7 @@ class InstagramApi {
 
             $this->setup_data( $this->data );
 
-            while ( count( $this->data["photos"] ) < 120 ) {
+            while ( count( $this->data["photos"] ) < 160 ) {
                 $this-> api_request( $this->data["next_page"] );
             }
 

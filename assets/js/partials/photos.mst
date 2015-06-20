@@ -1,5 +1,5 @@
-<div class="photo">
-    <a class="fancybox" rel="photos" href="{{ large_img }}">
-        <img class="img-sm" src="{{ small_img }}" />
+<div class="frame">
+    <a class="fancybox" rel="photos" href="{{large_img}}">
+        <img src="{{large_img}}" />
     </a>
 </div>

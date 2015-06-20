@@ -4,6 +4,6 @@
             <h1>videos</h1>
         </div>
 
-        <div class="row"></div>
+        <div class="media"></div>
     </div>
 </div>

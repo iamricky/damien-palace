@@ -1,5 +1,5 @@
-<div class="video">
+<div class="frame">
     <a class="fancybox" rel="munzmind" href="http://www.youtube.com/watch?v={{id}}">
-        <img class="img-lg" src="{{high_img}}" />
+        <img src="{{high_img}}" />
     </a>
 </div>
