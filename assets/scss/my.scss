@@ -104,7 +104,72 @@ body {
 
 .events {
   @extend %section;
-  @include background-image("featured-img.png");
+  @include background-image("featured-img.png", $fixed: true);
+
+  .event {
+    @extend .row;
+    letter-spacing: 0.48em;
+    margin: 42px 0 0;
+    text-transform: uppercase;
+
+    .date {
+      @extend .col-md-3;
+
+      font: {
+        family: "Proxima Nova Bold";
+        size: 24px;
+      };
+      text-align: right;
+    }
+
+    .venue {
+      @extend .col-md-5;
+      @extend .col-md-offset-1;
+      line-height: 30px;
+      text-align: left;
+
+      font: {
+        size: 18px;
+      };
+
+      .name {
+        font: {
+          family: "Proxima Nova Bold";
+        };
+      }
+
+      .locale {
+        font: {
+          family: "Proxima Nova Regular";
+        };
+      }
+    }
+
+    .link {
+      @extend .col-md-2;
+
+      a:link, a:visited, a:hover, a:active {
+        @include border-radius(30px);
+        $link-color: white;
+        color: $link-color;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 60px;
+        height: 60px;
+        width: 100%;
+
+        border: {
+          color: $link-color;
+          style: solid;
+          width: 1px;
+        };
+
+        font: {
+          family: "Proxima Nova Semibold";
+        };
+      }
+    }
+  }
 }
 
 .munz-mind {
