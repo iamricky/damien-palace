@@ -8,8 +8,19 @@ $instagram = new InstagramApi( $keys["instagram"] );
 $youtube = new YouTubeApi( $keys["youtube"] );
 
 add_theme_support( "post-thumbnails" );
-add_image_size( "music-thumb", 350, 348 );
-add_image_size( "news-thumb", 350, 360 );
+add_image_size( "music-thumb", 350, 348, true );
+add_image_size( "news-thumb", 350, 360, true );
+add_image_size( "news-feat-thumb", 540, 540, true );
+
+add_filter( "excerpt_length", "custom_excerpt_length", 999 );
+function custom_excerpt_length( $length ) {
+  return 12;
+}
+add_filter( "excerpt_more", "new_excerpt_more" );
+function new_excerpt_more( $more ) {
+  return "...";
+}
+remove_filter( "the_excerpt", "wpautop" );
 
 add_action( "wp_enqueue_scripts", "enqueue_assets" );
 function enqueue_assets() {
