@@ -82,71 +82,49 @@ body {
 
 .news {
   @extend %section;
+  @extend %section-type-style;
+  color: #32323c;
 
-  %thumb-img {
-    img {
-      @extend .img-responsive;
-      margin: 0 0 48px;
-    }
-  }
   %margin-top {
     margin: 72px 0 0;
   }
-
   .recent-post {
     @extend .col-sm-4;
     @extend %thumb-img;
     @extend %margin-top;
   }
-
   .end-recent {
     @extend .clearfix;
     @extend .hidden-xs;
     @extend .hidden-sm;
   }
-
   .prev-post {
     @extend .col-md-3;
     @extend .col-sm-6;
     @extend %thumb-img;
     @extend %margin-top;
   }
-
-  .title {
-    font: {
-      family: "Trade Gothic Condensed";
-      size: 36px;
-    };
-    line-height: 48px;
-    margin: 0 0 18px;
-  }
-
-  .excerpt {
-    font: {
-      family: "Proxima Nova Regular";
-      size: 18px;
-    };
-    line-height: 30px;
-  }
-
-  .permalink {
-    font: {
-      family: "Proxima Nova Extrabold";
-      size: 18px;
-    };
-    color: #32323c;
-    display: inline-block;
-    letter-spacing: 0.48em;
-    line-height: 30px;
-    margin: 30px 0 0;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
 }
 
 .music {
   @extend %section;
-  @include background-image("music-img.png");
+  @extend %section-type-style;
+  @include background-image("music-img.png", $fixed: true);
+
+  %margin-top {
+    margin: 72px 0 0;
+  }
+
+  a {
+    color: white;
+  }
+
+  .album {
+    @extend .col-md-4;
+    @extend .col-sm-6;
+    @extend %thumb-img;
+    @extend %margin-top;
+  }
 }
 
 .videos {
