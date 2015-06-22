@@ -1,3 +1,18 @@
+%font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-smooth: always;
+  text-rendering: optimizeLegibility;
+}
+
+%thumb-img {
+  img {
+    @extend .img-responsive;
+    margin: 0 0 48px;
+  }
+}
+
 %headline {
   text-align: center;
   text-transform: uppercase;
@@ -43,10 +58,34 @@
   }
 }
 
-%font-smoothing {
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  font-smooth: always;
-  text-rendering: optimizeLegibility;
+%section-type-style {
+  .title {
+    font: {
+      family: "Trade Gothic Condensed";
+      size: 36px;
+    };
+    line-height: 48px;
+    margin: 0 0 18px;
+  }
+
+  .excerpt {
+    font: {
+      family: "Proxima Nova Regular";
+      size: 18px;
+    };
+    line-height: 30px;
+  }
+
+  .permalink {
+    font: {
+      family: "Proxima Nova Extrabold";
+      size: 18px;
+    };
+    display: inline-block;
+    letter-spacing: 0.48em;
+    line-height: 30px;
+    margin: 30px 0 0;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
