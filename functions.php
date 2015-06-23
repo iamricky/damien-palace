@@ -120,6 +120,28 @@ function enqueue_post_types() {
   flush_rewrite_rules();
 }
 
+add_action( "admin_menu", "my_remove_menu_pages" );
+function my_remove_menu_pages() {
+  remove_menu_page( "upload.php" );
+  remove_menu_page( "edit.php?post_type=page" );
+  remove_menu_page( "edit-comments.php" );
+  remove_menu_page( "themes.php" );
+  remove_menu_page( "plugins.php" );
+  remove_menu_page( "users.php" );
+  remove_menu_page( "tools.php" );
+  remove_menu_page( "options-general.php" );
+  remove_menu_page( "link-manager.php" );
+
+  add_action( "admin_menu", "remove_acf_menu", 999 );
+  function remove_acf_menu() {
+    $admins = array( "webdev" );
+    $current_user = wp_get_current_user();
+    if ( !in_array( $current_user->user_login, $admins ) ) {
+      remove_menu_page( "edit.php?post_type=acf" );
+    }
+  }
+};
+
 add_action( "wp_ajax_nopriv_query_photos", "my_photo_query" );
 add_action( "wp_ajax_query_photos", "my_photo_query" );
 function my_photo_query() {
