@@ -1,6 +1,7 @@
 .DS_Store
 .sass-cache/
+.phpintel/
 
 api/keys.php
-assets/css/*
+assets/scss/*
 bower_components
