@@ -21,19 +21,19 @@ jQuery(function($) {
         },
         setupView = function(obj) {
 
-            $.get(fetchPartial(obj.partial), function(template) {
+            var $view = obj.view,
+                $viewParent = $view.parent(),
+                btnExists = $viewParent.find(".paginate-btn").length,
+                btn = "<div class=\"paginate-btn\"><div>View More</div></div>";
 
-                var $view = obj.view,
-                    $viewParent = $view.parent(),
-                    btnExists = $viewParent.find(".paginate-btn").length;
+            var media = obj.data,
+                part = obj.partial,
+                sliceEnd = media.length > 8 ? 8 : media.length;
 
-                var media = obj.data,
-                    sliceEnd = media.length > 8 ? 8 : media.length;
+            $.get(fetchPartial(part), function(template) {
 
                 if (media.length > 8 && !btnExists) {
-                    $viewParent.append(
-                        "<div class=\"paginate-btn\"><div>View More</div></div>"
-                    );
+                    $viewParent.append(btn);
                 }
 
                 $.each(media.slice(0, sliceEnd), function(idx, obj) {
@@ -42,6 +42,10 @@ jQuery(function($) {
 
                     $view.append(rendered);
                     media.shift(0, 1);
+
+                    if (~part.indexOf("featured")) {
+                        return false;
+                    }
                 });
             });
         };
@@ -50,10 +54,12 @@ jQuery(function($) {
         view = {
             photo: fetchView(".photos"),
             video: {
+                featured: fetchView(".featured"),
                 official: fetchView(".videos"),
                 munzmind: fetchView(".munz-mind")
             }
-        };
+        },
+        setupParams;
 
     var requests = [
         fetchMedia("photos"),
@@ -70,6 +76,10 @@ jQuery(function($) {
             partial: "photos.mst",
             view: view.photo,
             data: data.photo
+        }, {
+            partial: "featured.mst",
+            view: view.video.featured,
+            data: data.video.featured
         }, {
             partial: "official.mst",
             view: view.video.official,
