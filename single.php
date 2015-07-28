@@ -26,7 +26,7 @@
                         <?php if( !empty( $prev_post ) ): ?>
                             <?php echo get_the_post_thumbnail( $prev_post->ID, "post-pagination-thumb" ); ?>
                             <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
-                                <span>prev project</span>
+                                <span>prev post</span>
                                 <?php echo $prev_post->post_title; ?>
                             </a>
                         <?php endif; ?>
@@ -36,7 +36,7 @@
                         <?php if( !empty( $next_post ) ): ?>
                             <?php echo get_the_post_thumbnail( $next_post->ID, "post-pagination-thumb" ); ?>
                             <a href="<?php echo get_permalink( $next_post->ID ); ?>">
-                                <span>next project</span>
+                                <span>next post</span>
                                 <?php echo $next_post->post_title; ?>
                             </a>
                         <?php endif; ?>
