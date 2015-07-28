@@ -34,7 +34,7 @@
 
                     <div class="next">
                         <?php if( !empty( $next_post ) ): ?>
-                            <?php echo get_the_post_thumbnail( $next_post->ID, "next-pagination-thumb" ); ?>
+                            <?php echo get_the_post_thumbnail( $next_post->ID, "post-pagination-thumb" ); ?>
                             <a href="<?php echo get_permalink( $next_post->ID ); ?>">
                                 <span>next project</span>
                                 <?php echo $next_post->post_title; ?>
