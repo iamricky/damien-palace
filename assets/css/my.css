@@ -7397,7 +7397,9 @@ body {
 }
 .single [id^="post-"] #adjacent-posts {
   margin-top: 48px;
-  margin-bottom: 72px;
+  margin-bottom: 60px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .single [id^="post-"] #adjacent-posts a {
   color: white;
