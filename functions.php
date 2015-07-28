@@ -11,6 +11,7 @@ add_theme_support( "post-thumbnails" );
 add_image_size( "music-thumb", 350, 348, true );
 add_image_size( "news-thumb", 350, 360, true );
 add_image_size( "news-feat-thumb", 540, 540, true );
+add_image_size( "post-pagination-thumb", 48, 48, true );
 
 add_filter( "excerpt_length", "custom_excerpt_length", 999 );
 function custom_excerpt_length( $length ) {
@@ -21,6 +22,12 @@ function new_excerpt_more( $more ) {
   return "...";
 }
 remove_filter( "the_excerpt", "wpautop" );
+
+register_nav_menus(
+  array(
+    "social" => __( "Social Media Menu", "damien-palace" )
+  )
+);
 
 add_action( "wp_enqueue_scripts", "enqueue_assets" );
 function enqueue_assets() {
@@ -120,17 +127,29 @@ function enqueue_post_types() {
   flush_rewrite_rules();
 }
 
-add_action( "admin_menu", "my_remove_menu_pages" );
-function my_remove_menu_pages() {
-  remove_menu_page( "upload.php" );
-  remove_menu_page( "edit.php?post_type=page" );
-  remove_menu_page( "edit-comments.php" );
+add_action( "admin_init", "remove_submenu_pages", 999 );
+function remove_submenu_pages() {
+  $subpages = array( "themes.php", "theme-editor.php" );
+
+  foreach ( $subpages as $subpage ) {
+    remove_submenu_page( "themes.php", $subpage );
+  }
+
+  global $submenu;
+  unset( $submenu["themes.php"][6] );
+}
+
+add_action( "admin_menu", "remove_menu_pages" );
+function remove_menu_pages() {
+
+  $menu = array( "upload.php", "edit.php?post_type=page", "edit-comments.php", "plugins.php", "users.php", "tools.php", "options-general.php", "link-manager.php" );
+
+
+  foreach ( $menu as $page ) {
+    remove_menu_page( $page );
+  }
+
   remove_menu_page( "themes.php" );
-  remove_menu_page( "plugins.php" );
-  remove_menu_page( "users.php" );
-  remove_menu_page( "tools.php" );
-  remove_menu_page( "options-general.php" );
-  remove_menu_page( "link-manager.php" );
 
   add_action( "admin_menu", "remove_acf_menu", 999 );
   function remove_acf_menu() {
